@@ -1,5 +1,7 @@
 from django.db import models
 
+# from shgroup.models import SHGroup
+
 class Client(models.Model):
     clientName = models.CharField(max_length=200)
 
@@ -25,3 +27,4 @@ class Driver(models.Model):
 
     def __str__(self):
         return self.driverName
+

@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'team',
     'survey',
     'shgroup',
-    'setting'
+    'setting',
+    'project_user',
+    'aboutme',
+    'aboutothers'
 ]
 
 MIDDLEWARE = [
