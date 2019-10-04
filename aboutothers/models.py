@@ -15,7 +15,7 @@ class AOQuestion(models.Model):
     sliderTextRight = models.CharField(max_length=50)
     skipOptionYN = models.BooleanField(default=True)
     skipResponses = models.CharField(max_length=1000)
-    questionSequence = models.IntegerField()
+    questionSequence = models.PositiveIntegerField()
     topicPrompt = models.CharField(max_length=255)
     commentPrompt = models.CharField(max_length=255)
 
@@ -31,7 +31,7 @@ class AOResponse(models.Model):
     subjectUser = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name="aoSubjectUser")
     survey = models.ForeignKey(Survey, on_delete=models.DO_NOTHING)
     aoQuestion = models.ForeignKey(AOQuestion, on_delete=models.DO_NOTHING)
-    integerValue = models.IntegerField()
+    integerValue = models.PositiveIntegerField()
     topicValue = models.TextField()
     commentValue = models.TextField()
     skipValue = models.TextField()
@@ -45,7 +45,7 @@ class AOResponseTopic(models.Model):
 
 class AOPage(models.Model):
     aoPageName = models.CharField(max_length=50)
-    aoPageSequence = models.IntegerField()
+    aoPageSequence = models.PositiveIntegerField()
 
     def __str__(self):
         return self.aoPageName

@@ -15,7 +15,7 @@ class AMQuestion(models.Model):
     sliderTextRight = models.CharField(max_length=50)
     skipOptionYN = models.BooleanField(default=True)
     skipResponses = models.CharField(max_length=1000)
-    questionSequence = models.IntegerField()
+    questionSequence = models.PositiveIntegerField()
     topicPrompt = models.CharField(max_length=255)
     commentPrompt = models.CharField(max_length=255)
 
@@ -31,7 +31,7 @@ class AMResponse(models.Model):
     subjectUser = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name="amSubjectUser")
     survey = models.ForeignKey(Survey, on_delete=models.DO_NOTHING)
     amQuestion = models.ForeignKey(AMQuestion, on_delete=models.DO_NOTHING)
-    integerValue = models.IntegerField()
+    integerValue = models.PositiveIntegerField()
     topicValue = models.TextField()
     commentValue = models.TextField()
     skipValue = models.TextField()

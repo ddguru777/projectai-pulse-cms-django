@@ -9,7 +9,7 @@ class ControlType(models.Model):
 
 class ConceptClass(models.Model):
     conceptClassName = models.CharField(max_length=50)
-    childOf = models.IntegerField()
+    childOf = models.PositiveIntegerField()
     conceptClassDesc = models.TextField()
     conceptClassIRI = models.TextField()
 
